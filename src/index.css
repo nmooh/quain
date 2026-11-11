@@ -1,0 +1,38 @@
+@import './fonts.css';
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Instrument Serif', serif;
+  --font-body: 'Outfit', sans-serif;
+
+  --color-teal: #8aa399;
+  --color-lavender: #7d84b2;
+  --color-wisteria: #8fa6cb;
+  --color-lime: #dbf4a7;
+  --color-mint: #d5f9de;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: #eceef0;
+}
+
+.phone-shell > div {
+  box-sizing: border-box;
+  max-height: 100%;
+}
+
+/* Auf echten Handys (mode=device) ersetzt die Statusleiste des Geräts die gezeichnete. */
+.device .fake-status {
+  visibility: hidden;
+  height: 16px !important;
+}
