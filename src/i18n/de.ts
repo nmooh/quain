@@ -101,8 +101,6 @@ export const DE_EXACT: Record<string, string> = {
   'Tobias Nguyen in a casual professional portrait': 'Porträt von Tobias Nguyen',
 
   // Ohne Gedankenstriche (Nicolas, 2026-11-11): Texte aus dem Figma-Export, nur in der Anzeige ersetzt
-  'Deine berufliche Basis aus vertrauensvollen Beziehungen zu anderen Product Professionals — aufgebaut in guten Zeiten, für die Momente, die zählen.':
-    'Deine berufliche Basis aus vertrauensvollen Beziehungen zu anderen Product Professionals, aufgebaut in guten Zeiten für die Momente, die zählen.',
   'QUAIN verbindet dich gezielt mit passenden Product Professionals – in einer vertrauten Gruppe von drei bis fünf Personen oder im 1:1. So entstehen echte berufliche Beziehungen durch regelmäßigen, persönlichen Austausch.':
     'QUAIN verbindet dich gezielt mit passenden Product Professionals in einer vertrauten Gruppe von drei bis fünf Personen oder im 1:1. So entstehen echte berufliche Beziehungen durch regelmäßigen, persönlichen Austausch.',
   'Freigabe nicht möglich – bitte Ort eingeben': 'Freigabe nicht möglich. Bitte Ort eingeben.',

@@ -48,7 +48,7 @@ export const EN_EXACT: Record<string, string> = {
   vertraute: 'trusted',
   'Runde.': 'circle.',
   'Deine berufliche Basis aus vertrauensvollen Beziehungen zu anderen Product Professionals — aufgebaut in guten Zeiten, für die Momente, die zählen.':
-    'Your professional foundation of trusted relationships with other Product Professionals, built in good times for the moments that matter.',
+    'Your professional foundation of trusted relationships with other Product Professionals — built in good times, for the moments that matter.',
   Anmelden: 'Sign in',
   'Was ist Quain? →': 'What is QUAIN? →',
   'Verbindungen, die bleiben.': 'Connections that last.',
