@@ -114,7 +114,13 @@ function CaseStudy({ lang, onPitch, onPrototype }: { lang: Lang; onPitch: () => 
         </div>
       )}
       <div className="author">
-        <strong>{t.author}</strong>
+        <div className="who">
+          <strong>{t.author}</strong>
+          <span className="seeking">
+            <i aria-hidden="true" />
+            {t.seeking}
+          </span>
+        </div>
         <div className="author-links">
           <a className="btn small" href={LINKEDIN_URL} target="_blank" rel="noopener">
             {t.linkedin}
@@ -126,6 +132,12 @@ function CaseStudy({ lang, onPitch, onPrototype }: { lang: Lang; onPitch: () => 
           </a>
         </div>
       </div>
+      <p className="interview">
+        {t.interview}{' '}
+        <a href={LINKEDIN_URL} target="_blank" rel="noopener">
+          {t.interviewCta}
+        </a>
+      </p>
       <p className="note">{t.note}</p>
     </div>
   )
