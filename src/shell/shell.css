@@ -598,8 +598,6 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  border: 1.5px solid var(--lime);
-  font-weight: 500;
 }
 .case .facts li.live i {
   position: relative;
