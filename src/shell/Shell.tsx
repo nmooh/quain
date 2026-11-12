@@ -73,6 +73,10 @@ function CaseStudy({ lang, onPitch, onPrototype }: { lang: Lang; onPitch: () => 
       <p className="kicker">{t.kicker}</p>
       <div className="facts">
         <ul>
+          <li className="live">
+            <i aria-hidden="true" />
+            {t.live}
+          </li>
           {t.facts.map(f => (
             <li key={f}>{f}</li>
           ))}

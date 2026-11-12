@@ -10,6 +10,7 @@ export const LINKEDIN_URL = 'https://www.linkedin.com/in/nicolas-moegelin/'
 type Texts = {
   kicker: string
   facts: string[]
+  live: string
   problemLabel: string
   problem: string
   solutionLabel: string
@@ -35,6 +36,7 @@ type Texts = {
 export const TEXTS: Record<Lang, Texts> = {
   de: {
     kicker: 'End-to-End Product Case Study',
+    live: 'Test-Season läuft',
     facts: [
       '3 Monate',
       '3 Tiefeninterviews',
@@ -70,6 +72,7 @@ export const TEXTS: Record<Lang, Texts> = {
   },
   en: {
     kicker: 'End-to-End Product Case Study',
+    live: 'Test Season running',
     facts: [
       '3 months',
       '3 in-depth interviews',
