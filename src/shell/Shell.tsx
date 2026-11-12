@@ -64,7 +64,7 @@ function Brand() {
   )
 }
 
-function CaseStudy({ lang, onPitch }: { lang: Lang; onPitch: () => void }) {
+function CaseStudy({ lang, onPitch, onPrototype }: { lang: Lang; onPitch: () => void; onPrototype?: () => void }) {
   const t = TEXTS[lang]
   return (
     <div className="case">
@@ -76,6 +76,11 @@ function CaseStudy({ lang, onPitch }: { lang: Lang; onPitch: () => void }) {
           ))}
         </ul>
       </div>
+      {onPrototype && (
+        <button type="button" className="btn primary try" onClick={onPrototype}>
+          {t.tryPrototype} <span aria-hidden="true">→</span>
+        </button>
+      )}
       <dl className="psv">
         <div>
           <dt>{t.problemLabel}</dt>
@@ -91,7 +96,7 @@ function CaseStudy({ lang, onPitch }: { lang: Lang; onPitch: () => void }) {
         </div>
       </dl>
       <div className="actions">
-        <button type="button" className="btn primary" onClick={onPitch}>
+        <button type="button" className={onPrototype ? 'btn' : 'btn primary'} onClick={onPitch}>
           {t.pitch}
         </button>
       </div>
@@ -141,7 +146,10 @@ function PitchOverlay({ lang, onClose }: { lang: Lang; onClose: () => void }) {
 export default function Shell() {
   const [lang, setLang] = useState<Lang>(initialLang)
   const [pitchOpen, setPitchOpen] = useState(false)
-  const [sheetOpen, setSheetOpen] = useState(false)
+  // Handy: zuerst die Übersicht (Pitch, LinkedIn, Lebenslauf), der Prototyp per Button (Nicolas, 2026-11-12)
+  const [mobileView, setMobileView] = useState<'case' | 'app'>(() =>
+    new URLSearchParams(location.search).get('view') === 'app' ? 'app' : 'case')
+  const [appOpened, setAppOpened] = useState(mobileView === 'app')
   const [appKey, setAppKey] = useState(0)
   const mobile = useMediaQuery(MOBILE_QUERY)
   const scale = usePhoneScale()
@@ -160,43 +168,43 @@ export default function Shell() {
   const appSrc = `${BASE}app.html?lang=${lang}&mode=${mobile ? 'device' : 'frame'}`
 
   if (mobile) {
+    const openApp = () => {
+      setAppOpened(true)
+      setMobileView('app')
+    }
     return (
       <div className="m-root">
         <header className="m-bar">
-          <Brand />
+          {mobileView === 'app' ? (
+            <button type="button" className="btn small" onClick={() => setMobileView('case')}>
+              <span aria-hidden="true">←</span> {t.overview}
+            </button>
+          ) : (
+            <Brand />
+          )}
           <div className="m-bar-right">
             <LangSwitch lang={lang} onChange={setLang} label={t.langLabel} />
-            <button type="button" className="btn small" onClick={() => setSheetOpen(true)}>
-              {t.caseStudy}
-            </button>
+            {mobileView === 'app' && (
+              <button type="button" className="btn small" aria-label={t.restart} onClick={() => setAppKey(k => k + 1)}>
+                ↺
+              </button>
+            )}
           </div>
         </header>
-        <iframe key={`${appKey}-${lang}`} ref={frameRef} className="m-app" title="QUAIN" src={appSrc} />
-        {sheetOpen && (
-          <div className="sheet-backdrop" onClick={() => setSheetOpen(false)}>
-            <div className="sheet" onClick={e => e.stopPropagation()}>
-              <button type="button" className="sheet-close" aria-label={t.close} onClick={() => setSheetOpen(false)}>
-                ×
-              </button>
-              <CaseStudy
-                lang={lang}
-                onPitch={() => {
-                  setSheetOpen(false)
-                  setPitchOpen(true)
-                }}
-              />
-              <button
-                type="button"
-                className="btn restart"
-                onClick={() => {
-                  setAppKey(k => k + 1)
-                  setSheetOpen(false)
-                }}
-              >
-                ↺ {t.restart}
-              </button>
-            </div>
+        {mobileView === 'case' && (
+          <div className="m-case">
+            <CaseStudy lang={lang} onPitch={() => setPitchOpen(true)} onPrototype={openApp} />
           </div>
+        )}
+        {appOpened && (
+          <iframe
+            key={`${appKey}-${lang}`}
+            ref={frameRef}
+            className="m-app"
+            title="QUAIN"
+            src={appSrc}
+            style={{ display: mobileView === 'app' ? 'block' : 'none' }}
+          />
         )}
         {pitchOpen && <PitchOverlay lang={lang} onClose={() => setPitchOpen(false)} />}
       </div>

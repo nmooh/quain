@@ -17,6 +17,8 @@ type Texts = {
   visionLabel: string
   vision: string
   pitch: string
+  tryPrototype: string
+  overview: string
   author: string
   cv: string
   cvNote?: string
@@ -53,6 +55,8 @@ export const TEXTS: Record<Lang, Texts> = {
     vision:
       'Eine berufliche Basis aus vertrauten Beziehungen, die wir in guten Zeiten bauen, um uns im Bedarfsfall darauf zu stützen.',
     pitch: 'Pitch ansehen',
+    tryPrototype: 'Prototyp ausprobieren',
+    overview: 'Übersicht',
     author: 'Nicolas Moegelin',
     cv: 'Lebenslauf (PDF)',
     linkedin: 'LinkedIn',
@@ -86,6 +90,8 @@ export const TEXTS: Record<Lang, Texts> = {
     vision:
       'A professional foundation of trusted relationships that we build in good times, so we can rely on it when we need it.',
     pitch: 'View pitch',
+    tryPrototype: 'Try the prototype',
+    overview: 'Overview',
     author: 'Nicolas Moegelin',
     cv: 'CV (PDF)',
     cvNote: 'German',

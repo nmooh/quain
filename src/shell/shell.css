@@ -527,3 +527,34 @@ body {
   background: rgba(255, 255, 255, 0.9);
   color: var(--lav-dark);
 }
+
+/* Handy: Übersicht zuerst */
+.m-case {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 14px 20px calc(env(safe-area-inset-bottom) + 28px);
+}
+.m-case .actions .btn {
+  flex: 1 1 auto;
+  justify-content: center;
+}
+.m-case .author {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.m-case .btn.try {
+  margin-top: 20px;
+  width: 100%;
+  height: 52px;
+  justify-content: center;
+  font-size: 16px;
+}
+.m-case .psv {
+  padding: 4px 18px;
+}
+.m-case .psv > div {
+  grid-template-columns: 1fr;
+  gap: 6px;
+  padding: 14px 0;
+}
