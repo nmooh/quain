@@ -598,9 +598,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--lime);
-  border-color: var(--lime);
-  color: #3f4d2b;
+  border: 1.5px solid var(--lime);
   font-weight: 500;
 }
 .case .facts li.live i {
@@ -608,14 +606,14 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #4f8a2b;
+  background: var(--lime);
 }
 .case .facts li.live i::after {
   content: '';
   position: absolute;
   inset: -4px;
   border-radius: 50%;
-  border: 2px solid #4f8a2b;
+  border: 2px solid var(--lime);
   opacity: 0;
   animation: live-pulse 1.8s ease-out infinite;
 }
