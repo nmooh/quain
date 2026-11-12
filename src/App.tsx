@@ -1396,6 +1396,31 @@ function ProfileDetailsScreen({ accountType, value, onChange, onBack, onNext }: 
         Diese Angaben erscheinen in deinem QUAIN-Profil und helfen anderen, dich besser kennenzulernen.
       </p>
 
+      {accountType === 'company' && (
+        <div style={{
+          padding: '14px 16px', background: '#EBF5F0', borderRadius: 14,
+          display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20,
+          border: '1px solid #C8E8D8',
+        }}>
+          <div style={{
+            width: 40, height: 40, background: '#fff', borderRadius: 10,
+            display: 'flex', alignItems: 'center', justifyContent: 'center', color: C.teal, flexShrink: 0,
+          }}>
+            <CompanyAccountIcon />
+          </div>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: 11, color: C.teal, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 2 }}>
+              Unternehmen
+            </div>
+            <div style={{ fontWeight: 700, color: C.ink, fontSize: 15 }}>Lumio SE</div>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+            <div style={{ width: 7, height: 7, borderRadius: '50%', background: C.teal }} />
+            <span style={{ fontSize: 11, color: C.teal, fontWeight: 700 }}>Verifiziert</span>
+          </div>
+        </div>
+      )}
+
       <label style={{ display: 'block', marginBottom: 16 }}>
         <span style={{ display: 'block', fontSize: 11, color: C.muted, fontWeight: 700, marginBottom: 7, letterSpacing: '0.06em' }}>
           ROLLE ODER POSITION
@@ -1760,6 +1785,12 @@ function ProgramNeedsScreen({ selected, onToggle, note, onNoteChange, onBack, on
 
       <div style={{ flex: 1, minHeight: 28 }} />
       <Btn onClick={onNext}>Weiter</Btn>
+      <button onClick={onNext} style={{
+        marginTop: 12, alignSelf: 'center', padding: '8px 14px', border: 'none', background: 'none',
+        color: C.lavender, fontFamily: "'Outfit', sans-serif", fontSize: 14, fontWeight: 600, cursor: 'pointer',
+      }}>
+        Später hinzufügen
+      </button>
     </div>
   )
 }
@@ -5200,7 +5231,7 @@ export default function App() {
             onBack={() => setScreen('welcome')}
             onSelect={type => {
               setAccountType(type)
-              setScreen(type === 'company' ? 'profile' : 'private-signup-method')
+              setScreen(type === 'company' ? 'profile-details' : 'private-signup-method') // Demonstrator: ein Profilscreen (Nicolas, 2026-11-12)
             }}
           />
         )}
@@ -5249,7 +5280,7 @@ export default function App() {
             accountType={accountType}
             value={profileDetails}
             onChange={setProfileDetails}
-            onBack={() => setScreen(accountType === 'company' ? 'profile' : 'registration-success')}
+            onBack={() => setScreen(accountType === 'company' ? 'account-choice' : 'registration-success')}
             onNext={() => setScreen('location')}
           />
         )}
