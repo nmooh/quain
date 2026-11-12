@@ -6,6 +6,8 @@ const PHONE_W = 390
 const PHONE_H = 844
 const BEZEL = 14
 const MOBILE_QUERY = '(max-width: 899px)'
+// Anzahl der öffentlichen Folien (scripts/import_pitch.py, KEEP); Bilder unter pitch/<lang>/slides/
+const PITCH_SLIDES = 12
 
 function initialLang(): Lang {
   const fromUrl = new URLSearchParams(location.search).get('lang')
@@ -118,7 +120,7 @@ function CaseStudy({ lang, onPitch, onPrototype }: { lang: Lang; onPitch: () => 
   )
 }
 
-function PitchOverlay({ lang, onClose }: { lang: Lang; onClose: () => void }) {
+function PitchOverlay({ lang, mobile, onClose }: { lang: Lang; mobile: boolean; onClose: () => void }) {
   const t = TEXTS[lang]
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose()
@@ -138,7 +140,23 @@ function PitchOverlay({ lang, onClose }: { lang: Lang; onClose: () => void }) {
           </button>
         </div>
       </div>
-      <iframe className="pitch-frame" title={t.pitchTitle} src={`${BASE}pitch/${lang}/index.html`} />
+      {mobile ? (
+        // iOS-Safari passt iframes an die Inhaltsbreite an; auf dem Handy daher Folienbilder direkt
+        <div className="pitch-imgs">
+          {Array.from({ length: PITCH_SLIDES }, (_, i) => (
+            <img
+              key={i}
+              src={`${BASE}pitch/${lang}/slides/slide-${String(i).padStart(2, '0')}.jpg`}
+              alt={`${t.pitchTitle} ${i + 1}`}
+              width={1600}
+              height={900}
+              loading={i < 2 ? 'eager' : 'lazy'}
+            />
+          ))}
+        </div>
+      ) : (
+        <iframe className="pitch-frame" title={t.pitchTitle} src={`${BASE}pitch/${lang}/index.html`} />
+      )}
     </div>
   )
 }
@@ -206,7 +224,7 @@ export default function Shell() {
             style={{ display: mobileView === 'app' ? 'block' : 'none' }}
           />
         )}
-        {pitchOpen && <PitchOverlay lang={lang} onClose={() => setPitchOpen(false)} />}
+        {pitchOpen && <PitchOverlay lang={lang} mobile={mobile} onClose={() => setPitchOpen(false)} />}
       </div>
     )
   }
@@ -234,7 +252,7 @@ export default function Shell() {
           </button>
         </div>
       </main>
-      {pitchOpen && <PitchOverlay lang={lang} onClose={() => setPitchOpen(false)} />}
+      {pitchOpen && <PitchOverlay lang={lang} mobile={mobile} onClose={() => setPitchOpen(false)} />}
     </div>
   )
 }

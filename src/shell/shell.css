@@ -558,3 +558,18 @@ body {
   gap: 6px;
   padding: 14px 0;
 }
+
+.pitch-imgs {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 10px calc(env(safe-area-inset-bottom) + 20px);
+}
+.pitch-imgs img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 10px;
+  border-radius: 4px;
+  background: #fff;
+}
