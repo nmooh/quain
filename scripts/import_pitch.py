@@ -44,7 +44,7 @@ VIEWER = r"""
   .imgs img{display:block;width:100%;height:auto;margin:0 0 10px;border-radius:4px;box-shadow:0 6px 20px rgba(0,0,0,.3);background:#fff}
   body.stack .pnav{display:none}
 }
-@media print{.pnav{display:none}}
+@media print{.pnav,.imgs{display:none !important}}
 </style>
 <div class="pnav" aria-label="Navigation">
   <button type="button" data-d="-1" aria-label="Zurück">‹</button>
