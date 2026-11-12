@@ -36,8 +36,12 @@ VIEWER = r"""
   .pnav button:hover{background:rgba(255,255,255,.26)}
   .pnav button:disabled{opacity:.35;cursor:default}
   .pnav span{min-width:64px;text-align:center;color:rgba(255,255,255,.85);font:400 14px/1 "Outfit",sans-serif;letter-spacing:.06em}
-  body.stack{display:block;overflow-y:auto;padding:10px 0 24px;scroll-snap-type:none}
-  body.stack .slide{display:block;zoom:var(--zs,.2);margin:0 auto 10px;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  .imgs{display:none}
+  body.stack{display:block;overflow-y:auto;padding:10px 10px 24px;scroll-snap-type:none}
+  body.stack .slide{display:none !important}
+  body.stack .imgs{display:block}
+  .imgs img{display:block;width:100%;height:auto;margin:0 0 10px;border-radius:4px;box-shadow:0 6px 20px rgba(0,0,0,.3);background:#fff}
   body.stack .pnav{display:none}
 }
 @media print{.pnav{display:none}}
@@ -100,7 +104,10 @@ def main():
     # Kommentare und altes Präsentations-Skript entfernen, Viewer einsetzen
     html = re.sub(r'<!--.*?-->', '', html, flags=re.S)
     html = re.sub(r'<script>.*?</script>', '', html, flags=re.S)
-    html = html.replace('</body>', VIEWER + '\n</body>')
+    imgs = '<div class="imgs">' + ''.join(
+        f'<img src="slides/slide-{i:02d}.jpg" alt="Folie {i + 1}" loading="{"eager" if i < 2 else "lazy"}" width="1600" height="900">'
+        for i in range(len(KEEP))) + '</div>'
+    html = html.replace('</body>', imgs + VIEWER + '\n</body>')
     html = html.replace('<meta charset="utf-8">',
                         '<meta charset="utf-8">\n<meta name="robots" content="noindex, nofollow">', 1)
 
@@ -135,6 +142,18 @@ def main():
             page.goto((out_dir / 'index.html').as_uri(), wait_until='networkidle')
             page.evaluate('document.fonts.ready')
             page.wait_for_timeout(400)
+            # Folienbilder für Handys (ein Bild je Folie, 1600 × 900, JPEG)
+            sdir = out_dir / 'slides'
+            sdir.mkdir(exist_ok=True)
+            shot = browser.new_page(viewport={'width': 1920, 'height': 1080}, device_scale_factor=1600 / 1920)
+            shot.goto((out_dir / 'index.html').as_uri(), wait_until='networkidle')
+            shot.evaluate('document.fonts.ready')
+            shot.add_style_tag(content='body{display:block!important;overflow:visible!important;height:auto!important}'
+                               '.slide{display:block!important;zoom:1!important;box-shadow:none!important}.pnav,.imgs{display:none!important}')
+            shot.wait_for_timeout(300)
+            for i, el in enumerate(shot.query_selector_all('.slide')):
+                el.screenshot(path=str(sdir / f'slide-{i:02d}.jpg'), type='jpeg', quality=84)
+            shot.close()
             page.emulate_media(media='print')
             pdf = OUT / f'quain-pitch-{a.lang}.pdf'
             page.pdf(path=str(pdf), prefer_css_page_size=True, print_background=True)

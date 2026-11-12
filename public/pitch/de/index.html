@@ -934,7 +934,7 @@ h3{font-family:var(--serif);font-weight:400;color:var(--ink)}
 </section>
 
 
-
+<div class="imgs"><img src="slides/slide-00.jpg" alt="Folie 1" loading="eager" width="1600" height="900"><img src="slides/slide-01.jpg" alt="Folie 2" loading="eager" width="1600" height="900"><img src="slides/slide-02.jpg" alt="Folie 3" loading="lazy" width="1600" height="900"><img src="slides/slide-03.jpg" alt="Folie 4" loading="lazy" width="1600" height="900"><img src="slides/slide-04.jpg" alt="Folie 5" loading="lazy" width="1600" height="900"><img src="slides/slide-05.jpg" alt="Folie 6" loading="lazy" width="1600" height="900"><img src="slides/slide-06.jpg" alt="Folie 7" loading="lazy" width="1600" height="900"><img src="slides/slide-07.jpg" alt="Folie 8" loading="lazy" width="1600" height="900"><img src="slides/slide-08.jpg" alt="Folie 9" loading="lazy" width="1600" height="900"><img src="slides/slide-09.jpg" alt="Folie 10" loading="lazy" width="1600" height="900"><img src="slides/slide-10.jpg" alt="Folie 11" loading="lazy" width="1600" height="900"><img src="slides/slide-11.jpg" alt="Folie 12" loading="lazy" width="1600" height="900"></div>
 <style>
 @media screen{
   html,body{height:100%}
@@ -949,8 +949,12 @@ h3{font-family:var(--serif);font-weight:400;color:var(--ink)}
   .pnav button:hover{background:rgba(255,255,255,.26)}
   .pnav button:disabled{opacity:.35;cursor:default}
   .pnav span{min-width:64px;text-align:center;color:rgba(255,255,255,.85);font:400 14px/1 "Outfit",sans-serif;letter-spacing:.06em}
-  body.stack{display:block;overflow-y:auto;padding:10px 0 24px;scroll-snap-type:none}
-  body.stack .slide{display:block;zoom:var(--zs,.2);margin:0 auto 10px;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  .imgs{display:none}
+  body.stack{display:block;overflow-y:auto;padding:10px 10px 24px;scroll-snap-type:none}
+  body.stack .slide{display:none !important}
+  body.stack .imgs{display:block}
+  .imgs img{display:block;width:100%;height:auto;margin:0 0 10px;border-radius:4px;box-shadow:0 6px 20px rgba(0,0,0,.3);background:#fff}
   body.stack .pnav{display:none}
 }
 @media print{.pnav{display:none}}
