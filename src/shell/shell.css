@@ -573,3 +573,15 @@ body {
   border-radius: 4px;
   background: #fff;
 }
+
+/* Pitch-Button in Lemon Green (Nicolas, 2026-11-12) */
+.btn.lime {
+  background: var(--lime);
+  border-color: var(--lime);
+  color: #3f4d2b;
+  box-shadow: 0 10px 24px rgba(42, 47, 80, 0.22);
+}
+.btn.lime:hover {
+  background: #e6f8bf;
+  border-color: #e6f8bf;
+}

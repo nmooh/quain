@@ -79,8 +79,8 @@ function CaseStudy({ lang, onPitch, onPrototype }: { lang: Lang; onPitch: () => 
         </ul>
       </div>
       {onPrototype && (
-        <button type="button" className="btn primary try" onClick={onPrototype}>
-          {t.tryPrototype} <span aria-hidden="true">→</span>
+        <button type="button" className="btn lime try" onClick={onPitch}>
+          {t.pitch} <span aria-hidden="true">→</span>
         </button>
       )}
       <dl className="psv">
@@ -98,9 +98,15 @@ function CaseStudy({ lang, onPitch, onPrototype }: { lang: Lang; onPitch: () => 
         </div>
       </dl>
       <div className="actions">
-        <button type="button" className={onPrototype ? 'btn' : 'btn primary'} onClick={onPitch}>
-          {t.pitch}
-        </button>
+        {onPrototype ? (
+          <button type="button" className="btn" onClick={onPrototype}>
+            {t.tryPrototype} <span aria-hidden="true">→</span>
+          </button>
+        ) : (
+          <button type="button" className="btn lime" onClick={onPitch}>
+            {t.pitch}
+          </button>
+        )}
       </div>
       <div className="author">
         <strong>{t.author}</strong>
