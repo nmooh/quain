@@ -1052,7 +1052,7 @@ function EmailOutlineIcon() {
   )
 }
 
-function PrivateSignupMethodScreen({ onBack, onGoogle, onEmail }: {
+function PrivateSignupMethodScreen({ onBack, onGoogle }: {
   onBack: () => void
   onGoogle: () => void
   onEmail: () => void
@@ -1066,14 +1066,8 @@ function PrivateSignupMethodScreen({ onBack, onGoogle, onEmail }: {
       iconBackground: '#F7F8F7',
       iconColor: C.ink,
     },
-    {
-      title: 'Mit privater E-Mail registrieren',
-      description: 'Erstelle dein Konto mit einer E-Mail-Adresse deiner Wahl.',
-      icon: <EmailOutlineIcon />,
-      onClick: onEmail,
-      iconBackground: '#EEF1FF',
-      iconColor: C.lavender,
-    },
+    // Web-Demonstrator: nur Google-Registrierung, kürzere Time to Value (Nicolas, 2026-11-12).
+    // Die E-Mail-Registrierung (onEmail) bleibt im Code, wird hier aber nicht angeboten.
   ]
 
   return (
@@ -1686,6 +1680,14 @@ function InterestsScreen({ step, title, subtitle, items, selected, onToggle, onB
       <Btn onClick={onNext} disabled={!enough}>
         {enough ? 'Weiter' : `Noch ${3 - selected.length} wählen`}
       </Btn>
+      {!enough && (
+        <button onClick={onNext} style={{
+          marginTop: 12, alignSelf: 'center', padding: '8px 14px', border: 'none', background: 'none',
+          color: C.lavender, fontFamily: "'Outfit', sans-serif", fontSize: 14, fontWeight: 600, cursor: 'pointer',
+        }}>
+          Später hinzufügen
+        </button>
+      )}
     </div>
   )
 }
@@ -5115,7 +5117,7 @@ export default function App() {
   const [leisureInterests, setLeisureInterests] = useState<string[]>([])
   const [programNeeds, setProgramNeeds] = useState<string[]>([])
   const [programNotes, setProgramNotes] = useState('')
-  const [profileLocation, setProfileLocation] = useState('')
+  const [profileLocation, setProfileLocation] = useState('Köln') // Demonstrator: Stadt vorbelegt (Nicolas, 2026-11-12)
   const [profilePhoto, setProfilePhoto] = useState<string | null>(null)
   const [connectionFormat, setConnectionFormat] = useState<ConnectionFormat | null>(null)
   const [seasonInfoReturnScreen, setSeasonInfoReturnScreen] = useState<Screen>('connection-format')

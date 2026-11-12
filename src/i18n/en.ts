@@ -572,4 +572,5 @@ export const EN_EXACT: Record<string, string> = {
   'Private Präferenzen ·': 'Personal preferences ·',
   ich: 'me',
   Profile: 'profiles',
+  'Später hinzufügen': 'Add later',
 }
