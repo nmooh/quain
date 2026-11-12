@@ -2220,7 +2220,7 @@ function ConnectionFormatScreen({ accountType, onBack, onSelect, onSeasonInfo }:
             fontFamily: "'Instrument Serif', serif", fontSize: 29,
             color: C.ink, marginBottom: 7,
           }}>
-            QUAIN
+            Gruppe, 3–5 Personen
           </div>
           <p style={{ margin: '0 0 14px', color: C.muted, fontSize: 13, lineHeight: 1.55 }}>
             Ein QUAIN bringt dich mit zwei bis vier {accountType === 'company' ? 'Kolleg:innen' : 'Product Professionals'} zusammen. Ihr erlebt über eine Season hinweg gemeinsame soziale und berufliche Aktivitäten.
@@ -2230,7 +2230,7 @@ function ConnectionFormatScreen({ accountType, onBack, onSelect, onSeasonInfo }:
             background: HIGHLIGHT, color: HIGHLIGHT_TEXT, fontSize: 13, fontWeight: 700,
             outline: `1.5px solid ${HIGHLIGHT_OUTLINE}`, outlineOffset: -1.5,
           }}>
-            QUAIN wählen →
+            Gruppe wählen →
           </span>
         </button>
 

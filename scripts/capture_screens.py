@@ -20,14 +20,14 @@ L = {
                topics='3 bis 5 Themen', interests='3 bis 5 Interessen', needs='Was sollten wir beachten',
                review='Alles stimmt so', pro=['Product Strategy', 'OKRs & Metrics', 'User Research'],
                leisure=['Laufen', 'Specialty Coffee', 'Kochen'], needitems=['Vegetarische Ernährung', 'Keine langen Laufstrecken'],
-               quain='QUAIN wählen', random='QUAIN zufällig finden', start='Season 1 starten', home='Home',
+               quain='Gruppe wählen', random='QUAIN zufällig finden', start='Season 1 starten', home='Home',
                one='1:1 wählen', onerandom='1:1 zufällig finden', ongoing='LAUFENDE SEASON'),
     'en': dict(signin='Sign in', private='Create a personal account', google='Sign up with Google',
                cont='Continue', finish='Complete setup', looking='What are you looking for', city='e.g. Berlin, Hamburg or Cologne',
                topics='Choose 3 to 5 topics', interests='Choose 3 to 5 interests', needs='What should we keep in mind',
                review='All correct', pro=['Product Strategy', 'OKRs & Metrics', 'User Research'],
                leisure=['Running', 'Specialty Coffee', 'Cooking'], needitems=['Vegetarian diet', 'No long walking distances'],
-               quain='Choose QUAIN', random='Find a QUAIN at random', start='Start Season 1', home='Home',
+               quain='Choose group', random='Find a QUAIN at random', start='Start Season 1', home='Home',
                one='Choose 1:1', onerandom='Find a 1:1 at random', ongoing='ONGOING SEASON'),
 }
 

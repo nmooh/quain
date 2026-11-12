@@ -573,4 +573,6 @@ export const EN_EXACT: Record<string, string> = {
   ich: 'me',
   Profile: 'profiles',
   'Später hinzufügen': 'Add later',
+  'Gruppe, 3–5 Personen': 'Group, 3–5 people',
+  'Gruppe wählen →': 'Choose group →',
 }

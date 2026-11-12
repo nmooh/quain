@@ -424,6 +424,138 @@ h3{font-family:var(--serif);font-weight:400;color:var(--ink)}
 #gtm .mk .v{font:400 28px/1 var(--serif);color:var(--ink);white-space:nowrap}
 #gtm .mk li.som .k{color:var(--lime-ink)}
 #gtm .mk li.som .v{background:var(--lime);color:var(--lime-ink);border-radius:12px;padding:8px 12px}
+
+/* ===== Lesbarkeit (übernommen 2026-11-12, Nicolas): einheitliche, größere Schriftskala =====
+   Label (Versalien) 16 · Meta/Quelle 17 · Fließtext 21–22 · Kartentitel 34 · Zitat 36 */
+.kicker{font-size:16px}
+.sub{font-size:25px !important}
+.label{font-size:15px}
+.stepno{font-size:16px}
+.foot{font-size:17px}
+.tick{font-size:13px}
+.pcap{font-size:17px}
+/* 01 */
+#s1 .season .head h3{font-size:34px}
+#s1 .f .t{font-size:20px}
+#s1 .vision p,#s1 .mission p{font-size:22px}
+/* 02 + 03: Zitate einheitlich */
+#s2 blockquote{font-size:36px;line-height:1.18}
+#why blockquote.q{font-size:36px;line-height:1.18}
+#s2 .who,#why .who{font-size:17px}
+#why h3{font-size:34px}
+#why ul.ev li{font-size:24px}
+/* 04 */
+#s3 .stack h3,#s3 h3{font-size:34px}
+#s3 .pl{font-size:21px}
+#s3 .stack .pl + p{font-size:20px}
+#s3 p{font-size:21px}
+#s3 .shead{font-size:21px}
+#s3 .vote li{font-size:22px}
+#s3 .princ .row span{font-size:21px}
+/* 05 */
+#s4 .scr b{font-size:34px}
+#s4 .scr p{font-size:21px}
+/* 06 */
+#s6 h3{font-size:34px}
+#s6 .who{font-size:21px}
+#s6 .price .u{font-size:21px}
+#s6 li{font-size:21px}
+#s6 .lever .t{font-size:20px}
+#s6 .mid p{font-size:20px}
+/* 07 */
+#s8 .lx,#s8 .ly{font-size:18px}
+#s8 .co{font-size:19px}
+#s8 .me{font-size:16px}
+#s8 .right h3{font-size:34px}
+#s8 .usp{font-size:28px}
+#s8 .uspsrc{font-size:17px}
+#s8 .adv li{font-size:21px}
+/* 08 */
+#s5 .c .k{font-size:15px}
+#s5 .rh .d{font-size:22px}
+#s5 .calc{font-size:21px}
+#s5 .src{font-size:17px}
+/* 09 */
+#rel .hz{font-size:17px}
+#rel .it h4{font-size:26px}
+#rel .it p{font-size:18px}
+#rel .it .kpi{font-size:14px}
+#rel .rh b{font-size:26px}
+#rel .rh span{font-size:14px}
+#rel .rl li{font-size:17px}
+#rel .rl p{font-size:17px}
+#rel .goals div span{font-size:18px}
+/* 10 */
+#risks .row .v{font-size:25px}
+#risks .row .q{font-size:21px}
+#risks .row .q i{font-size:14px}
+#risks .pf .nm{font-size:30px}
+#risks .pf .who{font-size:17px}
+#risks .pf .say{font-size:22px}
+#risks .pf .ss{font-size:14px}
+#risks .both p{font-size:26px}
+/* Anhang */
+#refs .n{font-size:16px}
+#refs .t{font-size:17px}
+#refs .t em{font-size:15px}
+
+/* Korrekturen nach Prüfung */
+.sub{max-width:1664px}
+#rel .cols{height:432px}
+#rel .it p{font-size:17px}
+#rel .it .kpi{font-size:13px}
+#rel .rels{top:736px;height:104px}
+#risks .spine{width:520px}
+#risks .r{grid-template-columns:1fr 520px 1fr}
+#risks .row .q{font-size:20px}
+#refs .t{font-size:16px}
+#refs .t em{font-size:14px}
+#refs li{padding:4px 0}
+
+/* Änderungen Nicolas 2026-11-11: Folie 5 ohne Beschreibungen, größere Screens; Folie 7 USP als Liste */
+#s4 .journey{top:300px}
+#s4 .scr .phone{width:280px}
+#s4 .scr b{margin-top:22px}
+#s8 .usp2{margin-top:22px;padding:20px 0 22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+#s8 .usp2 p{font:500 22px/1.2 var(--sans);color:var(--ink)}
+#s8 .usp2 ul{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:10px}
+#s8 .usp2 li{display:flex;align-items:center;gap:14px;font:300 22px/1.3 var(--sans);color:var(--ink)}
+#s8 .usp2 li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--lav);flex:none}
+#s8 .usp2{margin-top:0;border-top:0;padding-top:0}
+#s8 .usp2 p{font:400 34px/1 var(--serif)}
+#s8 .usp2 ul{margin-top:18px}
+
+/* Folie 10 als eine Karte (Nicolas, 2026-11-11) */
+#risks .rk2{position:absolute;left:128px;right:128px;top:290px;height:548px;display:grid;grid-template-columns:1fr 460px 1fr;gap:14px;padding:14px;background:#fff;border:1px solid var(--line);border-radius:28px}
+#risks .col{display:grid;grid-template-rows:200px repeat(5,1fr);border-radius:20px;overflow:hidden}
+#risks .col.b{background:#F3FBE4}
+#risks .col.w{background:#EFF0F9}
+#risks .col.q{background:#fff}
+#risks .col .head{display:flex;flex-direction:column;justify-content:center;gap:7px;padding:0 30px}
+#risks .col.b .head{align-items:flex-end;text-align:right}
+#risks .col.w .head{align-items:flex-start}
+#risks .col.q .head{align-items:center;justify-content:flex-end;padding-bottom:24px}
+#risks .col .cell{display:flex;flex-direction:column;justify-content:center;padding:0 30px;border-top:1px solid rgba(42,47,44,.08)}
+#risks .col.b .cell{align-items:flex-end;text-align:right;border-top-color:rgba(63,77,43,.12)}
+#risks .col.w .cell{border-top-color:rgba(90,96,148,.14)}
+#risks .col.q .cell{align-items:center;text-align:center;gap:5px;border-top-color:var(--line2)}
+#risks .col.b .cell p,#risks .col.w .cell p{font:400 25px/1.2 var(--serif);color:var(--ink)}
+#risks .col.q .cell p{font:400 20px/1.25 var(--sans);color:var(--ink)}
+#risks .col.q .cell i{font:500 14px/1 var(--sans);font-style:normal;letter-spacing:.12em;color:var(--lav-dark)}
+#risks .col .tag{margin-bottom:4px}
+#risks .col .tag.b{background:var(--lime);color:var(--lime-ink)}
+#risks .col .tag.w{background:#C9CCE6;color:var(--ink)}
+#risks .col .nm{font:400 30px/1 var(--serif);color:var(--ink)}
+#risks .col .who{font:300 17px/1.3 var(--sans);color:var(--body)}
+#risks .col .say{font:italic 400 22px/1.2 var(--serif);color:var(--lav-dark)}
+#risks .col.b .say{color:var(--lime-ink)}
+#risks .col .ss{font:500 14px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+#risks .both{top:852px;height:124px}
+#s1 .f .t{white-space:nowrap}
+#s1 .sub{max-width:1664px !important}
+#s8 .uspsrc{margin-top:14px}
+#refs li{padding:3px 0}
+#refs .t{line-height:1.25}
 </style>
 </head>
 <body>
@@ -444,8 +576,8 @@ h3{font-family:var(--serif);font-weight:400;color:var(--ink)}
     <div class="head"><h3>Season</h3></div>
     <div class="facts">
       <div class="f"><p class="v">1:1s or 3–5</p><p class="t">people per Season</p></div>
-      <div class="f"><p class="v">6 months</p><p class="t">leave without guilt</p></div>
-      <div class="f"><p class="v">6 activities</p><p class="t">no meeting vibe</p></div>
+      <div class="f"><p class="v">6 months</p><p class="t">leave without bad vibes</p></div>
+      <div class="f"><p class="v">6 activities</p><p class="t">no meeting feeling</p></div>
     </div>
   </div>
   <div class="vision"><span class="label">Vision<sup class="ref">[2]</sup></span>
@@ -570,7 +702,7 @@ h3{font-family:var(--serif);font-weight:400;color:var(--ink)}
     </div>
     <div class="card">
       <span class="stepno">Step 4/4</span>
-      <h3>Leave or keep going<sup class="ref">[7]</sup></h3>
+      <h3>Leave / continue<sup class="ref">[7]</sup></h3>
       <div class="vote">
         <ul><li>Leave at the end of the program via the system, without an awkward goodbye</li><li class="go">Start a new Season</li></ul>
       </div>
@@ -588,10 +720,10 @@ h3{font-family:var(--serif);font-weight:400;color:var(--ink)}
   <h2 class="headline">From profile to <em>Season</em>.</h2>
   <p class="sub">Clickable B2C prototype as the basis for the MVP.<sup class="ref">[7]</sup></p>
   <div class="journey">
-    <div class="scr"><div class="phone"><img src="../assets/screenshots-en/b2c_06_zusammenfassung.png" alt="Prototype: All correct?"></div><b>Preference profile</b><p class="cap">Professional focus and personal interests.</p></div>
-    <div class="scr"><div class="phone"><img src="../assets/screenshots-en/b2c_13_1zu1-match.png" alt="Prototype: We found someone for you"></div><b>Matching</b><p class="cap">QUAIN shows what you have in common.</p></div>
-    <div class="scr"><div class="phone"><img src="../assets/screenshots-en/b2c_11_season.png" alt="Prototype: Season"></div><b>Planning</b><p class="cap">Date, place and format: QUAIN organises.</p></div>
-    <div class="scr"><div class="phone"><img src="../assets/screenshots-en/b2c_14_wie-geht-es-weiter.png" alt="Prototype: What happens next?"></div><b>End of Season</b><p class="cap">Decide quietly: continue, new QUAIN or leave.</p></div>
+    <div class="scr"><div class="phone"><img src="../assets/screenshots-en/b2c_06_zusammenfassung.png" alt="Prototype: All correct?"></div><b>Preference profile</b></div>
+    <div class="scr"><div class="phone"><img src="../assets/screenshots-en/b2c_13_1zu1-match.png" alt="Prototype: We found someone for you"></div><b>Matching</b></div>
+    <div class="scr"><div class="phone"><img src="../assets/screenshots-en/b2c_11_season.png" alt="Prototype: Season"></div><b>Planning</b></div>
+    <div class="scr"><div class="phone"><img src="../assets/screenshots-en/b2c_14_wie-geht-es-weiter.png" alt="Prototype: What happens next?"></div><b>End of Season</b></div>
   </div>
   <div class="foot"><span class="claim">Your home base for a trusted business network</span><b>05 / 10</b></div>
 </section>
@@ -625,7 +757,7 @@ h3{font-family:var(--serif);font-weight:400;color:var(--ink)}
 <section class="slide" id="s8">
   <span class="kicker">Competition</span>
   <h2 class="headline">Proven mechanism, <em>new</em> goal.</h2>
-  <p class="sub">Moderated C-level peer groups have existed for decades (YPO since 1950, Vistage since 1957), at C-level prices.<sup class="ref">[6, 12]</sup></p>
+  <p class="sub">Moderated C-level peer groups have existed for decades, at C-level prices.<sup class="ref">[6, 12]</sup></p>
   <div class="card map">
     <div class="plot">
       <div class="mx"></div><div class="my"></div>
@@ -647,9 +779,11 @@ h3{font-family:var(--serif);font-weight:400;color:var(--ink)}
     </div>
   </div>
   <div class="right">
-    <h3>What QUAIN <em>combines</em></h3>
-    <p class="usp">A fixed small circle that experiences things together for a Season instead of holding meetings, with relationship as the goal, at a price for individuals and with a guilt-free exit after every Season.</p>
-    <p class="uspsrc">Not found in this combination at any provider we examined (as of 11/2026).<sup class="ref">[6]</sup></p>
+    <div class="usp2">
+      <p>QUAIN</p>
+      <ul><li>puts the focus on senior professionals</li><li>builds relationships through shared experiences</li><li>automatically creates preference-based activities</li></ul>
+    </div>
+    <p class="uspsrc">Not found in this combination at any of the providers examined.<sup class="ref">[23]</sup></p>
     <div class="adv">
       <span class="label">What the market doesn’t solve · own assessment</span>
       <ul><li><span><b>LinkedIn:</b> many loose contacts, labour-intensive (posting)</span></li><li><span><b>Events / meetups:</b> one-off, networking depends on personality</span></li><li><span><b>Personal CRMs:</b> create no shared moments</span></li><li><span><b>C-level peer forums:</b> exclusive (high costs)<sup class="ref">[6]</sup></span></li></ul>
@@ -730,18 +864,31 @@ h3{font-family:var(--serif);font-weight:400;color:var(--ink)}
   <span class="kicker">Experiment · Risks &amp; open questions</span>
   <h2 class="headline">Two futures, five <em>open</em> questions.</h2>
   <p class="sub">Two fictional interviews from 2036 show what has to work.<sup class="ref">[17]</sup></p>
-  <div class="rk">
-    <div class="spine"></div>
-    <div class="r hd">
-      <div class="pf"><span class="tag b">Best case</span><span class="nm">Julia K., 41</span><span class="who">Senior Product Manager · HR tech scale-up, Berlin</span><span class="say">“At some point, QUAIN became <em>indispensable</em>.”</span><span class="ss">18 Seasons in nine years</span></div>
-      <span class="label">Open question</span>
-      <div class="pf"><span class="tag w">Worst case</span><span class="nm">Daniel M., 44</span><span class="who">Senior Product Manager · logistics SME, Cologne</span><span class="say">“We were nice, but never <em>honest</em>.”</span><span class="ss">Nine Seasons in eight years</span></div>
+  <div class="rk2">
+    <div class="col b">
+      <div class="head"><span class="tag b">Best case</span><span class="nm">Julia K., 41</span><span class="who">Senior Product Manager · HR tech scale-up, Berlin</span><span class="say">“At some point, QUAIN became <em>indispensable</em>.”</span><span class="ss">18 Seasons in nine years</span></div>
+      <div class="cell"><p>Company insolvent, three conversations in one week.</p></div>
+      <div class="cell"><p>Never organised anything, just showed up.</p></div>
+      <div class="cell"><p>The end of the first circle didn’t hurt.</p></div>
+      <div class="cell"><p>Happily paid every month for 18 Seasons.</p></div>
+      <div class="cell"><p>Berlin 2027: the first group starts.</p></div>
     </div>
-    <div class="r row"><p class="v">Company insolvent, three conversations in one week.</p><div class="q"><i>H1 · H2</i>Does trust emerge that holds?</div><p class="v">Nine Seasons and no one I would call.</p></div>
-    <div class="r row"><p class="v">Never organised anything, just showed up.</p><div class="q"><i>H3 · H4</i>Does a fixed program fit everyday life?</div><p class="v">The dates were fixed, my calendar wasn’t.</p></div>
-    <div class="r row"><p class="v">The end of the first circle didn’t hurt.</p><div class="q"><i>H5</i>Does leaving work without bad vibes?</div><p class="v">Started a new Season because the others probably would.</p></div>
-    <div class="r row"><p class="v">Happily paid every month for 18 Seasons.</p><div class="q"><i>H6</i>Does the value justify the monthly fee?</div><p class="v">Paying for something like friendship doesn’t fit.</p></div>
-    <div class="r row"><p class="v">Berlin 2027: the first group starts.</p><div class="q"><i>H8</i>Are there enough people per city?</div><p class="v">Cologne 2028: the first QUAIN doesn’t start.</p></div>
+    <div class="col q">
+      <div class="head"><span class="label">Open question</span></div>
+      <div class="cell"><i>H1 · H2</i><p>Does trust emerge that holds?</p></div>
+      <div class="cell"><i>H3 · H4</i><p>Does a fixed program fit everyday life?</p></div>
+      <div class="cell"><i>H5</i><p>Does leaving work without bad vibes?</p></div>
+      <div class="cell"><i>H6</i><p>Does the value justify the monthly fee?</p></div>
+      <div class="cell"><i>H8</i><p>Are there enough people per city?</p></div>
+    </div>
+    <div class="col w">
+      <div class="head"><span class="tag w">Worst case</span><span class="nm">Daniel M., 44</span><span class="who">Senior Product Manager · logistics SME, Cologne</span><span class="say">“We were nice, but never <em>honest</em>.”</span><span class="ss">Nine Seasons in eight years</span></div>
+      <div class="cell"><p>Nine Seasons and no one I would call.</p></div>
+      <div class="cell"><p>The dates were fixed, my calendar wasn’t.</p></div>
+      <div class="cell"><p>Started a new Season because the others probably would.</p></div>
+      <div class="cell"><p>Paying for something like friendship doesn’t fit.</p></div>
+      <div class="cell"><p>Cologne 2028: the first QUAIN doesn’t start.</p></div>
+    </div>
   </div>
   <div class="card both">
     <div><span class="label">Customer longevity</span><p>How do we keep interest and curiosity alive in the long run?</p></div>
@@ -780,6 +927,7 @@ h3{font-family:var(--serif);font-weight:400;color:var(--ink)}
       <li><span class="n">[20]</span><span class="t">Yan, Venkataramani, Tang &amp; Hirst (2024): Navigating Inter-Team Competition, J. of Applied Psychology, 73 teams (field) and 162 teams (experiment)<em>doi.org/10.1037/apl0001216</em></span></li>
       <li><span class="n">[21]</span><span class="t">Interview 03, transcript (verbatim quote, German, 35:26): evidence for change of perspective (KP5, ⬤◯◯, I03 only)<em>01_discover/Interviews/interview-03/fathom-transkript.md</em></span></li>
       <li><span class="n">[22]</span><span class="t">Agile roadmap (Now/Next/Later) and story map with releases, Miro (delivery exercise)<em>Miro board · not documented in the repository</em></span></li>
+      <li><span class="n">[23]</span><span class="t">Own web research (11 Nov 2026), 18 providers, incl. Productlab, Delight Path, Supra, Boye &amp; Co, Timeleft, 222, Pie; mostly self-reported by providers, no claim to completeness<em>Fact check 2026-11-11</em></span></li>
     </ul>
   </div>
   <div class="foot"><span class="claim">Your home base for a trusted business network</span><b>Appendix</b></div>
