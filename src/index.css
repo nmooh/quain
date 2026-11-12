@@ -36,3 +36,13 @@ body {
   visibility: hidden;
   height: 16px !important;
 }
+
+/* Auf echten Handys volle Breite und Höhe statt 390 × 844 (sonst Ränder links und rechts) */
+.device .phone-shell,
+.device [style*="max-width: 390px"] {
+  max-width: none !important;
+}
+.device .phone-shell {
+  max-height: none !important;
+  box-shadow: none !important;
+}
