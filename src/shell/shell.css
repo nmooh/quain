@@ -439,3 +439,91 @@ a {
   width: 100%;
   border: 0;
 }
+
+/* ---------- Farbwelt: CI-Lavendel als Hintergrund (Nicolas, 2026-11-12) ---------- */
+body {
+  background: var(--lav);
+  color: #fff;
+}
+.pill {
+  background: #fff;
+  border-color: #fff;
+  color: var(--lav-dark);
+}
+.lang {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.32);
+}
+.lang button {
+  color: rgba(255, 255, 255, 0.85);
+}
+.lang button.on {
+  background: #fff;
+  color: var(--lav-dark);
+}
+.btn {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #fff;
+}
+.btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: #fff;
+}
+.btn small {
+  color: rgba(255, 255, 255, 0.72);
+}
+.btn.primary {
+  background: #fff;
+  border-color: #fff;
+  color: var(--lav-dark);
+  box-shadow: 0 10px 24px rgba(42, 47, 80, 0.22);
+}
+.btn.primary:hover {
+  background: #f1f2fa;
+}
+.btn:focus-visible,
+.lang button:focus-visible,
+.restart-link:focus-visible {
+  outline-color: #fff;
+}
+.case .kicker {
+  color: #fff;
+}
+.case .facts li {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+.case .psv {
+  background: #fff;
+  box-shadow: 0 18px 44px rgba(42, 47, 80, 0.18);
+}
+.case .author {
+  border-top-color: rgba(255, 255, 255, 0.28);
+}
+.case .author strong {
+  color: #fff;
+}
+.case .note {
+  color: rgba(255, 255, 255, 0.75);
+}
+.restart-link {
+  color: rgba(255, 255, 255, 0.8);
+}
+.restart-link:hover {
+  color: #fff;
+}
+.phone {
+  box-shadow:
+    0 0 0 2px #2a2d2d,
+    0 40px 80px rgba(30, 33, 60, 0.35),
+    0 12px 24px rgba(30, 33, 60, 0.2);
+}
+.sheet {
+  background: var(--lav);
+}
+.sheet-close {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--lav-dark);
+}

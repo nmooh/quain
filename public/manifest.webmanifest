@@ -4,8 +4,8 @@
   "start_url": "/quain/",
   "scope": "/quain/",
   "display": "standalone",
-  "background_color": "#EEF1FF",
-  "theme_color": "#E4F6E8",
+  "background_color": "#7D84B2",
+  "theme_color": "#7D84B2",
   "icons": [
     { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
     { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
