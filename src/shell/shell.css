@@ -656,3 +656,24 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .case .facts li.live i::after { animation: none; }
 }
+
+/* Name neben dem QUAIN-Pill in der oberen Leiste (Nicolas, 2026-11-13) */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.brand .byline {
+  font: 400 22px/1 var(--serif);
+  color: #fff;
+  white-space: nowrap;
+}
+@media (max-width: 899px) {
+  .brand {
+    gap: 9px;
+  }
+  .brand .byline {
+    font-size: 18px;
+  }
+}

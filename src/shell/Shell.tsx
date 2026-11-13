@@ -58,10 +58,13 @@ function LangSwitch({ lang, onChange, label }: { lang: Lang; onChange: (l: Lang)
   )
 }
 
-function Brand() {
+function Brand({ name }: { name?: string }) {
   return (
-    <span className="pill">
-      <i aria-hidden="true" />QUAIN
+    <span className="brand">
+      <span className="pill">
+        <i aria-hidden="true" />QUAIN
+      </span>
+      {name && <span className="byline">{name}</span>}
     </span>
   )
 }
@@ -221,7 +224,7 @@ export default function Shell() {
               <span aria-hidden="true">←</span> {t.overview}
             </button>
           ) : (
-            <Brand />
+            <Brand name={t.author} />
           )}
           <div className="m-bar-right">
             <LangSwitch lang={lang} onChange={setLang} label={t.langLabel} />
@@ -258,7 +261,7 @@ export default function Shell() {
   return (
     <div className="d-root">
       <header className="d-bar">
-        <Brand />
+        <Brand name={t.author} />
         <LangSwitch lang={lang} onChange={setLang} label={t.langLabel} />
       </header>
       <main className="d-main">
