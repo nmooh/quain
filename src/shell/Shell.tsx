@@ -69,7 +69,7 @@ function Brand({ name }: { name?: string }) {
   )
 }
 
-function CaseStudy({ lang, onPitch, onPrototype }: { lang: Lang; onPitch: () => void; onPrototype?: () => void }) {
+function CaseStudy({ lang, onPitch, onPrototype }: { lang: Lang; onPitch: () => void; onPrototype: () => void }) {
   const t = TEXTS[lang]
   return (
     <div className="case">
@@ -85,16 +85,14 @@ function CaseStudy({ lang, onPitch, onPrototype }: { lang: Lang; onPitch: () => 
           ))}
         </ul>
       </div>
-      {onPrototype && (
-        <>
-          <button type="button" className="btn lime try" onClick={onPitch}>
-            {t.pitch} <span aria-hidden="true">→</span>
-          </button>
-          <button type="button" className="btn try2" onClick={onPrototype}>
-            {t.tryPrototype} <span aria-hidden="true">→</span>
-          </button>
-        </>
-      )}
+      <div className="cta">
+        <button type="button" className="btn lime try" onClick={onPitch}>
+          {t.pitch} <span aria-hidden="true">→</span>
+        </button>
+        <button type="button" className="btn try2" onClick={onPrototype}>
+          {t.tryPrototype} <span aria-hidden="true">→</span>
+        </button>
+      </div>
       <dl className="psv">
         <div>
           <dt>{t.problemLabel}</dt>
@@ -109,13 +107,6 @@ function CaseStudy({ lang, onPitch, onPrototype }: { lang: Lang; onPitch: () => 
           <dd>{t.vision}</dd>
         </div>
       </dl>
-      {!onPrototype && (
-        <div className="actions">
-          <button type="button" className="btn lime" onClick={onPitch}>
-            {t.pitch}
-          </button>
-        </div>
-      )}
       <div className="author">
         <div className="who">
           <strong>{t.author}</strong>
@@ -195,6 +186,7 @@ export default function Shell() {
     new URLSearchParams(location.search).get('view') === 'app' ? 'app' : 'case')
   const [appOpened, setAppOpened] = useState(mobileView === 'app')
   const [appKey, setAppKey] = useState(0)
+  const [glow, setGlow] = useState(false)
   const mobile = useMediaQuery(MOBILE_QUERY)
   const scale = usePhoneScale()
   const frameRef = useRef<HTMLIFrameElement>(null)
@@ -255,6 +247,23 @@ export default function Shell() {
     )
   }
 
+  // Desktop: „Prototyp ausprobieren“ lässt das Telefon kurz aufleuchten und tippt auf dem
+  // Startscreen „Anmelden“ an, damit man direkt im Ablauf ist (Nicolas, 2026-11-13)
+  const tryOnDesktop = () => {
+    try {
+      const doc = frameRef.current?.contentDocument
+      const label = lang === 'de' ? 'Anmelden' : 'Sign in'
+      const btn = doc && [...doc.querySelectorAll('button')].find(b => b.textContent?.trim() === label)
+      btn?.click()
+    } catch {
+      /* iframe nicht erreichbar – nur aufleuchten */
+    }
+    // ohne key-Wechsel, damit der Prototyp im iframe nicht neu lädt
+    setGlow(false)
+    requestAnimationFrame(() => setGlow(true))
+    window.setTimeout(() => setGlow(false), 1500)
+  }
+
   const outerW = (PHONE_W + BEZEL * 2) * scale
   const outerH = (PHONE_H + BEZEL * 2) * scale
 
@@ -265,10 +274,12 @@ export default function Shell() {
         <LangSwitch lang={lang} onChange={setLang} label={t.langLabel} />
       </header>
       <main className="d-main">
-        <CaseStudy lang={lang} onPitch={() => setPitchOpen(true)} />
+        <CaseStudy lang={lang} onPitch={() => setPitchOpen(true)} onPrototype={tryOnDesktop} />
         <div className="stage">
           <div style={{ width: outerW, height: outerH }}>
-            <div className="phone" style={{ transform: `scale(${scale})` }}>
+            <div
+              className={glow ? 'phone glow' : 'phone'}
+              style={{ transform: `scale(${scale})` }}>
               <div className="island" aria-hidden="true" />
               <iframe key={`${appKey}-${lang}`} ref={frameRef} title="QUAIN" src={appSrc} width={PHONE_W} height={PHONE_H} />
             </div>
