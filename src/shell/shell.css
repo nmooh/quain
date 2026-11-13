@@ -665,7 +665,8 @@ body {
   min-width: 0;
 }
 .brand .byline {
-  font: 400 22px/1 var(--serif);
+  font: 500 14px/1 var(--sans);
+  letter-spacing: 0.02em;
   color: #fff;
   white-space: nowrap;
 }
@@ -674,7 +675,7 @@ body {
     gap: 9px;
   }
   .brand .byline {
-    font-size: 18px;
+    font-size: 13px;
   }
 }
 
