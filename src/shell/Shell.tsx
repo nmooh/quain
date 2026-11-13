@@ -64,7 +64,11 @@ function Brand({ name }: { name?: string }) {
       <span className="pill">
         <i aria-hidden="true" />QUAIN
       </span>
-      {name && <span className="byline">{name}</span>}
+      {name && (
+        <a className="byline" href={LINKEDIN_URL} target="_blank" rel="noopener">
+          {name}
+        </a>
+      )}
     </span>
   )
 }
@@ -223,7 +227,7 @@ export default function Shell() {
               <span aria-hidden="true">←</span> {t.overview}
             </button>
           ) : (
-            <Brand name={t.author} />
+            <Brand name={t.getInTouch} />
           )}
           <div className="m-bar-right">
             <LangSwitch lang={lang} onChange={setLang} label={t.langLabel} />
@@ -277,7 +281,7 @@ export default function Shell() {
   return (
     <div className="d-root">
       <header className="d-bar">
-        <Brand name={t.author} />
+        <Brand name={t.getInTouch} />
         <LangSwitch lang={lang} onChange={setLang} label={t.langLabel} />
       </header>
       <main className="d-main">

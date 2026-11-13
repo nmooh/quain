@@ -690,6 +690,11 @@ body {
   letter-spacing: 0.02em;
   color: #fff;
   white-space: nowrap;
+  text-decoration: none;
+}
+.brand .byline:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 @media (max-width: 899px) {
   .brand {

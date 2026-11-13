@@ -22,6 +22,7 @@ type Texts = {
   tryPrototype: string
   overview: string
   author: string
+  getInTouch: string
   seeking: string
   interview: string
   interviewCta: string
@@ -65,6 +66,7 @@ export const TEXTS: Record<Lang, Texts> = {
     tryPrototype: 'Prototyp ausprobieren',
     overview: 'Übersicht',
     author: 'Nicolas Moegelin',
+    getInTouch: 'Get in touch',
     seeking: 'Aktuell auf der Suche nach einer neuen Herausforderung',
     interview: 'Hast du 20 Minuten für ein Interview zu QUAIN?',
     interviewCta: 'Kontaktiere mich über LinkedIn.',
@@ -105,6 +107,7 @@ export const TEXTS: Record<Lang, Texts> = {
     tryPrototype: 'Try the prototype',
     overview: 'Overview',
     author: 'Nicolas Moegelin',
+    getInTouch: 'Get in touch',
     seeking: 'Currently looking for a new challenge',
     interview: 'Got 20 minutes for an interview about QUAIN?',
     interviewCta: 'Contact me on LinkedIn.',
