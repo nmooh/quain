@@ -215,6 +215,27 @@ a {
   line-height: 1.55;
   color: var(--body);
 }
+.case .psv .points {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 4px;
+}
+.case .psv .points li {
+  position: relative;
+  padding-left: 16px;
+}
+.case .psv .points li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--lav);
+}
 .case .actions {
   margin-top: 22px;
   display: flex;

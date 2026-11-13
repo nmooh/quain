@@ -100,7 +100,14 @@ function CaseStudy({ lang, onPitch, onPrototype }: { lang: Lang; onPitch: () => 
         </div>
         <div>
           <dt>{t.solutionLabel}</dt>
-          <dd>{t.solution}</dd>
+          <dd>
+            {t.solution}
+            <ul className="points">
+              {t.solutionPoints.map((x) => (
+                <li key={x}>{x}</li>
+              ))}
+            </ul>
+          </dd>
         </div>
         <div className="vision">
           <dt>{t.visionLabel}</dt>

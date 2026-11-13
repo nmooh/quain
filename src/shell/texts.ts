@@ -15,6 +15,7 @@ type Texts = {
   problem: string
   solutionLabel: string
   solution: string
+  solutionPoints: string[]
   visionLabel: string
   vision: string
   pitch: string
@@ -52,10 +53,11 @@ export const TEXTS: Record<Lang, Texts> = {
       'KPIs',
     ],
     problemLabel: 'Problem',
-    problem: 'Wertvolle Kontakte gehen verloren, sobald gemeinsame Arbeit oder Anlässe enden und fehlen später.',
+    problem: 'Wertvolle Kontakte gehen verloren, sobald gemeinsame Arbeit oder Anlässe enden. Später fehlen sie dann.',
     solutionLabel: 'Lösung',
     solution:
-      'Kuratierte Seasons für vertraute Beziehungen: 1:1 oder 3–5 Personen, 6 Monate, 6 Aktivitäten ohne Meeting-Vibe und ein eindeutiges Ende, das den Ausstieg einfach macht.',
+      'Kuratierte Seasons für vertraute Beziehungen, mit einem eindeutigen Ende, das den Ausstieg einfach macht:',
+    solutionPoints: ['1:1s oder in Gruppen von 3–5 Personen', '6 Monate', '6 Aktivitäten', 'Ohne Meeting-Vibe'],
     visionLabel: 'Vision',
     vision:
       'Eine berufliche Basis aus vertrauten Beziehungen, die wir in guten Zeiten bauen, um uns im Bedarfsfall darauf zu stützen.',
@@ -91,10 +93,11 @@ export const TEXTS: Record<Lang, Texts> = {
       'KPIs',
     ],
     problemLabel: 'Problem',
-    problem: 'Valuable contacts get lost once shared work or occasions end and are missing later.',
+    problem: 'Valuable contacts get lost once shared work or occasions end. Later, they are missing.',
     solutionLabel: 'Solution',
     solution:
-      'Curated Seasons for trusted relationships: a 1:1 or 3–5 people, 6 months, 6 activities without a meeting vibe and a clear ending that makes leaving easy.',
+      'Curated Seasons for trusted relationships, with a clear ending that makes leaving easy:',
+    solutionPoints: ['1:1s or groups of 3–5 people', '6 months', '6 activities', 'No meeting vibe'],
     visionLabel: 'Vision',
     vision:
       'A professional foundation of trusted relationships that we build in good times, so we can rely on it when we need it.',
