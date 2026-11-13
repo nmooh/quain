@@ -65,7 +65,14 @@ function Brand({ name }: { name?: string }) {
         <i aria-hidden="true" />QUAIN
       </span>
       {name && (
-        <a className="byline" href={LINKEDIN_URL} target="_blank" rel="noopener">
+        <a
+          className="byline"
+          href="#contact"
+          onClick={(e) => {
+            e.preventDefault()
+            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+          }}
+        >
           {name}
         </a>
       )}
@@ -124,7 +131,7 @@ function CaseStudy({ lang, onPitch, onPrototype }: { lang: Lang; onPitch: () => 
           {t.interviewCta}
         </a>
       </p>
-      <div className="author">
+      <div className="author" id="contact">
         <div className="who">
           <strong>{t.author}</strong>
           <span className="seeking">
