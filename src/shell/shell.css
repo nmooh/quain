@@ -763,3 +763,9 @@ body {
 .case .cta + .note {
   margin-top: 10px;
 }
+
+/* Trennlinie zwischen Kontakt und Pitch/Prototyp (Nicolas, 2026-11-16) */
+.case .author {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+}
