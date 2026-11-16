@@ -112,6 +112,7 @@ function CaseStudy({ lang, onPitch, onPrototype }: { lang: Lang; onPitch: () => 
           {t.tryPrototype} <span aria-hidden="true">→</span>
         </button>
       </div>
+      <p className="note">{t.note}</p>
       <dl className="psv">
         <div>
           <dt>{t.problemLabel}</dt>
@@ -150,7 +151,6 @@ function CaseStudy({ lang, onPitch, onPrototype }: { lang: Lang; onPitch: () => 
           {t.interviewCta}
         </a>
       </p>
-      <p className="note">{t.note}</p>
     </div>
   )
 }
