@@ -85,24 +85,24 @@ function CaseStudy({ lang, onPitch, onPrototype }: { lang: Lang; onPitch: () => 
   return (
     <div className="case">
       <p className="kicker">{t.kicker}</p>
-      <div className="facts">
-        <ul>
-          <li className="live">
+      <div className="author" id="contact">
+        <div className="who">
+          <strong>{t.author}</strong>
+          <span className="seeking">
             <i aria-hidden="true" />
-            {t.live}
-          </li>
-          {t.facts.map(f => (
-            <li key={f}>{f}</li>
-          ))}
-        </ul>
-      </div>
-      <div className="cta">
-        <button type="button" className="btn lime try" onClick={onPitch}>
-          {t.pitch} <span aria-hidden="true">→</span>
-        </button>
-        <button type="button" className="btn try2" onClick={onPrototype}>
-          {t.tryPrototype} <span aria-hidden="true">→</span>
-        </button>
+            {t.seeking}
+          </span>
+        </div>
+        <div className="author-links">
+          <a className="btn small" href={LINKEDIN_URL} target="_blank" rel="noopener">
+            {t.linkedin}
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a className="btn small" href={`${BASE}cv/Nicolas-Moegelin-Lebenslauf.pdf`} target="_blank" rel="noopener">
+            {t.cv}
+            {t.cvNote && <small>{t.cvNote}</small>}
+          </a>
+        </div>
       </div>
       <dl className="psv">
         <div>
@@ -125,31 +125,31 @@ function CaseStudy({ lang, onPitch, onPrototype }: { lang: Lang; onPitch: () => 
           <dd>{t.vision}</dd>
         </div>
       </dl>
+      <div className="facts">
+        <ul>
+          <li className="live">
+            <i aria-hidden="true" />
+            {t.live}
+          </li>
+          {t.facts.map(f => (
+            <li key={f}>{f}</li>
+          ))}
+        </ul>
+      </div>
+      <div className="cta">
+        <button type="button" className="btn lime try" onClick={onPitch}>
+          {t.pitch} <span aria-hidden="true">→</span>
+        </button>
+        <button type="button" className="btn try2" onClick={onPrototype}>
+          {t.tryPrototype} <span aria-hidden="true">→</span>
+        </button>
+      </div>
       <p className="interview">
         {t.interview}{' '}
         <a href={LINKEDIN_URL} target="_blank" rel="noopener">
           {t.interviewCta}
         </a>
       </p>
-      <div className="author" id="contact">
-        <div className="who">
-          <strong>{t.author}</strong>
-          <span className="seeking">
-            <i aria-hidden="true" />
-            {t.seeking}
-          </span>
-        </div>
-        <div className="author-links">
-          <a className="btn small" href={LINKEDIN_URL} target="_blank" rel="noopener">
-            {t.linkedin}
-            <span aria-hidden="true">↗</span>
-          </a>
-          <a className="btn small" href={`${BASE}cv/Nicolas-Moegelin-Lebenslauf.pdf`} target="_blank" rel="noopener">
-            {t.cv}
-            {t.cvNote && <small>{t.cvNote}</small>}
-          </a>
-        </div>
-      </div>
       <p className="note">{t.note}</p>
     </div>
   )
