@@ -84,7 +84,6 @@ function CaseStudy({ lang, onPitch, onPrototype }: { lang: Lang; onPitch: () => 
   const t = TEXTS[lang]
   return (
     <div className="case">
-      <p className="kicker">{t.kicker}</p>
       <div className="author" id="contact">
         <div className="who">
           <strong>{t.author}</strong>
@@ -104,6 +103,7 @@ function CaseStudy({ lang, onPitch, onPrototype }: { lang: Lang; onPitch: () => 
           </a>
         </div>
       </div>
+      <p className="kicker">{t.kicker}</p>
       <div className="cta">
         <button type="button" className="btn lime try" onClick={onPitch}>
           {t.pitch} <span aria-hidden="true">→</span>
