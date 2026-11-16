@@ -104,6 +104,14 @@ function CaseStudy({ lang, onPitch, onPrototype }: { lang: Lang; onPitch: () => 
           </a>
         </div>
       </div>
+      <div className="cta">
+        <button type="button" className="btn lime try" onClick={onPitch}>
+          {t.pitch} <span aria-hidden="true">→</span>
+        </button>
+        <button type="button" className="btn try2" onClick={onPrototype}>
+          {t.tryPrototype} <span aria-hidden="true">→</span>
+        </button>
+      </div>
       <dl className="psv">
         <div>
           <dt>{t.problemLabel}</dt>
@@ -135,14 +143,6 @@ function CaseStudy({ lang, onPitch, onPrototype }: { lang: Lang; onPitch: () => 
             <li key={f}>{f}</li>
           ))}
         </ul>
-      </div>
-      <div className="cta">
-        <button type="button" className="btn lime try" onClick={onPitch}>
-          {t.pitch} <span aria-hidden="true">→</span>
-        </button>
-        <button type="button" className="btn try2" onClick={onPrototype}>
-          {t.tryPrototype} <span aria-hidden="true">→</span>
-        </button>
       </div>
       <p className="interview">
         {t.interview}{' '}
